@@ -5,18 +5,16 @@ require_relative 'model.rb'
 class Controller
   include ViewModule
 
-  attr_accessor :flashcards
-  attr_reader :card
+  attr_accessor :flashcards, :card
   def initialize
     @flashcards = Model.new('flashcard_samples.txt')
+    @card = flashcards.deck[0]
     welcome_message
     check_input(gets.chomp)
   end
 
   def pull_card
-    @card = flashcards.deck[0] #pick the card to display the question
-    display_guess_ask(card) #display the question to the user
-    check_input(gets.chomp)
+    self.card = flashcards.deck[0] #pick the card to display the question
   end
 
   def check_guess(card, guess)
@@ -25,6 +23,9 @@ class Controller
 
   def play
     pull_card
+    flashcards.deck.shuffle!
+    display_guess_ask(card)
+    check_input(gets.chomp)
   end
 
 
@@ -32,16 +33,18 @@ class Controller
 
     case input
     when 'play'
-      pull_card
       play
     when 'quit'
       goodbye_message
     when 'help'
       help_message
       check_input(gets.chomp)
+    when 'skip'
+      loser_message
+      play
     when card.answer
       correct_answer_message
-      flashcards.deck.shuffle!
+      play
     else
       wrong_answer_message
       check_input(gets.chomp)

@@ -26,4 +26,8 @@ module ViewModule
     puts "Type 'play' to continue playing the game. Type 'quit' to quit."
   end
 
+  def loser_message
+    puts "What? Was that question too hard for you? Really?"
+  end
+
 end
