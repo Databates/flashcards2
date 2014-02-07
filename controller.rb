@@ -36,3 +36,4 @@ end
 
 flashcard_app = Controller.new()
 flashcard_app.pull_card
+flashcard_app.

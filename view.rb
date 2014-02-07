@@ -1,7 +1,7 @@
 module ViewModule
 
   def welcome_message
-    puts "Welcome to the Ruby Flashcard App"
+    puts "Welcome to the Ruby Flashcard App. Type 'quit' to quit anytime. Type 'help' to see options anytime."
   end
 
   def display_guess_ask(card)
@@ -19,6 +19,10 @@ module ViewModule
 
   def goodbye_message
     puts "Thank-you for playing. Goodbye!"
+  end
+
+  def help_message
+    puts "Type 'continue' to play. Type 'quit' to quit."
   end
 
 end
