@@ -21,19 +21,25 @@ class Controller
     end
 
     correct_answer_message
-    flashcards.shuffle
+    flashcards.deck.shuffle!
   end
 
   def check_guess(card, guess)
     if card.answer == guess
-      true
+      return true
     else
       false
     end
   end
 
+  def play
+
+  end
+
 end
 
 flashcard_app = Controller.new()
-flashcard_app.pull_card
-flashcard_app.
+flashcard_app.play
+# flashcard_app.pull_card
+# flashcard_app.pull_card
+
