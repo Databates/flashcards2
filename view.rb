@@ -1,4 +1,6 @@
 module ViewModule
+  # I like that you guys have extracted the view responsibilities to a module.
+  # Why use puts sometimes and print sometimes?
 
   def welcome_message
     puts "Welcome to the Ruby Flashcard App. Type 'quit' to quit anytime. Type 'help' to see options anytime."
