@@ -9,9 +9,7 @@ class Model
   end
 
   def parser
-    File.open(file).each_slice(3) do |line|
-      self.deck << Card.new(line)
-    end
+    File.open(file).each_slice(3) { |line| self.deck << Card.new(line) }
   end
 end
 
