@@ -22,7 +22,11 @@ module ViewModule
   end
 
   def help_message
-    puts "Type 'continue' to play. Type 'quit' to quit."
+    puts "Reminder: Don't be a dumbass."
+  end
+
+  def dumbass_message
+    puts "Wtf was that? Type in a real command."
   end
 
 end
