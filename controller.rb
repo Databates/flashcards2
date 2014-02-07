@@ -6,8 +6,8 @@ class Controller
   include ViewModule
 
   attr_accessor :flashcards, :card
-  def initialize
-    @flashcards = Model.new('flashcard_samples.txt')
+  def initialize(file)
+    @flashcards = Model.new(file)
     @card = flashcards.deck[0]
     welcome_message
     check_input(gets.chomp)
@@ -53,7 +53,7 @@ class Controller
 
 end
 
-flashcard_app = Controller.new()
+flashcard_app = Controller.new('flashcard_samples.txt')
 # flashcard_app.play
 # flashcard_app.pull_card
 # flashcard_app.pull_card
