@@ -1,15 +1,11 @@
-class View
-
-  def initialize
-
-  end
+module ViewModule
 
   def welcome_message
     puts "Welcome to the Ruby Flashcard App"
   end
 
   def display_guess_ask(card)
-    puts "#{model.card.question}"
+    puts "#{card.question}"
     puts "Guess:"
   end
 
@@ -24,4 +20,5 @@ class View
   def goodbye_message
     puts "Thank-you for playing. Goodbye!"
   end
+
 end

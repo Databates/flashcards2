@@ -1,11 +1,14 @@
 class Model
   attr_accessor :deck
+  attr_reader :file
 
-  def initialize
+  def initialize(file)
+    @file = file
     @deck = []
+    parser
   end
 
-  def parser(file)
+  def parser
     File.open(file).each_slice(3) do |line|
       self.deck << Card.new(line)
     end
@@ -17,11 +20,11 @@ class Card
   attr_reader :question, :answer
 
   def initialize(attributes)
-    @question = attributes[0]
-    @answer = attributes[1]
+    @question = attributes[0].chomp
+    @answer = attributes[1].chomp
   end
 end
 
-model = Model.new
-model.parser('flashcard_samples.txt')
+# model = Model.new('flashcard_samples.txt')
+# model.parser
 # model.deck
