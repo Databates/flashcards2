@@ -12,11 +12,14 @@ class Controller
     card = model.deck[0] #pick the card to display the question
     view.display_guess_ask #display the question to the user
     guess = gets.chomp
-    if check_guess(card, guess) # if the user guessed correctly
-      view.correct_answer_message
-    else
+
+    until check_guess(card, guess) == true
       view.wrong_answer_message
+      pull_card
     end
+
+    view.correct_answer_message
+    model.move_card_to_bottom_of_deck
   end
 
   def check_guess(card, guess)

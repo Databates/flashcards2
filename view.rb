@@ -5,11 +5,12 @@ class View
   end
 
   def welcome_message
-    "Welcome to the Ruby Flashcard App"
+    puts "Welcome to the Ruby Flashcard App"
   end
 
   def display_guess_ask
-
+    puts "#{model.deck[0].question}"
+    puts "Guess:"
   end
 
   def correct_answer_message
