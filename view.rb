@@ -5,8 +5,8 @@ module ViewModule
   end
 
   def display_guess_ask(card)
-    puts "#{card.question}"
-    puts "Guess:"
+    puts "Question: #{card.question}"
+    print "Guess: "
   end
 
   def correct_answer_message
