@@ -15,6 +15,7 @@ module ViewModule
 
   def wrong_answer_message
     puts "Incorrect. Please try again."
+    print "Guess: "
   end
 
   def goodbye_message
@@ -22,11 +23,7 @@ module ViewModule
   end
 
   def help_message
-    puts "Reminder: Don't be a dumbass."
-  end
-
-  def dumbass_message
-    puts "Wtf was that? Type in a real command."
+    puts "Type 'play' to continue playing the game. Type 'quit' to quit."
   end
 
 end

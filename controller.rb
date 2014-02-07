@@ -16,12 +16,11 @@ class Controller
   def pull_card
     @card = flashcards.deck[0] #pick the card to display the question
     display_guess_ask(card) #display the question to the user
-    guess = gets.chomp
-    check_input(guess)
+    check_input(gets.chomp)
   end
 
   def check_guess(card, guess)
-    card.answer == guess ? return true : false
+    card.answer == guess
   end
 
   def play
@@ -44,8 +43,8 @@ class Controller
       correct_answer_message
       flashcards.deck.shuffle!
     else
-      dumbass_message
-      play
+      wrong_answer_message
+      check_input(gets.chomp)
     end
   end
 
