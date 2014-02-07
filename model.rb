@@ -12,7 +12,6 @@ class Model
     File.open(file).each_slice(3) do |line|
       self.deck << Card.new(line)
     end
-    # deck
   end
 end
 
@@ -24,7 +23,3 @@ class Card
     @answer = attributes[1].chomp
   end
 end
-
-# model = Model.new('flashcard_samples.txt')
-# model.parser
-# model.deck

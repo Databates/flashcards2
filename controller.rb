@@ -1,7 +1,6 @@
 require_relative 'view.rb'
 require_relative 'model.rb'
 
-
 class Controller
   include ViewModule
 
@@ -54,7 +53,3 @@ class Controller
 end
 
 flashcard_app = Controller.new('flashcard_samples.txt')
-# flashcard_app.play
-# flashcard_app.pull_card
-# flashcard_app.pull_card
-
