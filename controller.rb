@@ -5,25 +5,26 @@ require_relative 'model.rb'
 class Controller
 
   def initialize
-
+    flashcards = Model.new()
+    flashcards_ui = View.new()
   end
 
   def pull_card
-    card = model.deck[0] #pick the card to display the question
-    view.display_guess_ask #display the question to the user
+    card = flashcards.deck[0] #pick the card to display the question
+    flashcards_ui.display_guess_ask(card) #display the question to the user
     guess = gets.chomp
 
     until check_guess(card, guess) == true
-      view.wrong_answer_message
+      flashcards_ui.wrong_answer_message
       pull_card
     end
 
-    view.correct_answer_message
-    model.move_card_to_bottom_of_deck
+    flashcards_ui.correct_answer_message
+    flashcards.remove_card
   end
 
   def check_guess(card, guess)
-    if model.card.answer == guess
+    if flashcards.card.answer == guess
       true
     else
       false
