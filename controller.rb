@@ -20,11 +20,11 @@ class Controller
     end
 
     flashcards_ui.correct_answer_message
-    flashcards.remove_card
+    flashcards.shuffle
   end
 
   def check_guess(card, guess)
-    if flashcards.card.answer == guess
+    if card.answer == guess
       true
     else
       false
